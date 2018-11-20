@@ -1,6 +1,59 @@
+/* Entire body */
+body {
+background:red url(images/bw_01.jpg) repeat-x;
+}
+
+
+#wrap {
+	width:700px;
+	margin:0px auto 15px auto;
+	font-family:Arial, Verdana;
+	color:lightblue;
+}
+	
+
 #header {
 	height:242PX;
 	margin:0px auto 15px auto;
 	font-family:Arial, Verdana;
 	color:black;
+}
+
+/* header menu */
+
+#topmenu {
+	display:block;
+	list-style:none;
+	padding:0 0px 0px 278px;
+	float: right;
+	width 415px;
+}
+
+#topmenu li {
+	display:inline;
+}
+
+#topmenu a {
+	display:block;
+	float: left;
+	height:28px;
+	margin:0px 0px 0px0px;
+	text-decoration:none;
+	padding:9px 15px 0px 15px;
+	text-align:center;
+
+}
+
+#topmenu a, #topmenu a:visited, #topmenu a:active {
+	color: green;
+}
+
+#topmenu a:hover{
+	color:red;
+	background-color:gray;
+}
+
+#topmenu .active a, #topmenu .active a:visited, #topmenu .active a:active {
+	color:red;
+	background-color: blue;
 }
