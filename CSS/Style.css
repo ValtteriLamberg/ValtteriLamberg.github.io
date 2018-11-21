@@ -1,15 +1,15 @@
 /* Entire body */
-<body style="background-color: lime">
+<body style="background-color:#FFC0CB">
 
 
 .topnav {
-	background-color: blue;
+	background-color: black;
 	overflow: hidden;
 }
 
 .topnav a {
 	float: left;
-	color: green;
+	color: white;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
