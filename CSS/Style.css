@@ -4,13 +4,14 @@ background: url(images/bw_01.jpg) repeat-x;
 }
 
 
+
 #wrap {
 	width:700px;
 	margin:0px auto 15px auto;
 	font-family:Arial, Verdana;
 	color:lightblue;
 }
-	
+/*	
 
 #header {
 	height:242PX;
@@ -18,9 +19,9 @@ background: url(images/bw_01.jpg) repeat-x;
 	font-family:Arial, Verdana;
 	color:black;
 }
-
+*/
 /* header menu */
-
+/*
 #topmenu {
 	display:block;
 	list-style:none;
@@ -28,11 +29,12 @@ background: url(images/bw_01.jpg) repeat-x;
 	float: right;
 	width 415px;
 }
-
+*/
+/*
 #topmenu li {
 	display:inline;
 }
-
+*/
 /* #topmenu a {
 	display:block;
 	float: left;
