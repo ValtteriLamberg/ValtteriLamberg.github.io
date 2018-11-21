@@ -33,7 +33,7 @@ background:red url(images/bw_01.jpg) repeat-x;
 	display:inline;
 }
 
-#topmenu a {
+/* #topmenu a {
 	display:block;
 	float: left;
 	height:28px;
@@ -57,3 +57,14 @@ background:red url(images/bw_01.jpg) repeat-x;
 	color:red;
 	background-color: blue;
 }
+
+#content {
+	background-color: white
+}
+
+#mainpage {
+	width:700px;
+	float:left;
+	padding:5px 5px 5px 0px;
+	height:auto;
+
