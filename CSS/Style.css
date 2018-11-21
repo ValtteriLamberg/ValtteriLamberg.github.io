@@ -1,6 +1,9 @@
 /* Entire body */
+<body style="background-color: silver">
+
+
 .topnav {
-	background-color: black;
+	background-color: blue;
 	overflow: hidden;
 }
 
