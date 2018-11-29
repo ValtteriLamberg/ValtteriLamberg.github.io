@@ -6,6 +6,144 @@
 	<link href="CSS/Style.css" rel="stylesheet" type="text/css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
+	<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+function toName()
+     {
+var toNameval=document.getElementById("email").value;
+toNameval = "mailto:" + toNameval + "?subject=Guest Book example";
+this.document.mail.action = toNameval;
+}
+function Reset() {
+document.getElementById("name").value = "";
+document.getElementById("email").value = "";
+document.getElementById("brows").value = navigator.appName + " " + navigator.appVersion;
+document.getElementById("country").value = "";
+document.getElementById("comments").value = "";
+document.getElementById("favorites").value = "";
+document.getElementById("name").focus();
+}
+function submitForms() {
+if ( (isName() ) && (isEmail()) && (isBrowser()) && (isCountry()) && (isComment()) && (isFavorite()) )
+if (confirm("\nYou're about to e-mail the form.\n\nClick on YES to submit.\n\nClick on NO to abort."))
+{
+var emailAddress=document.getElementById("email").value
+alert("\nYour submission will now be made to:\n\n\n\n"+emailAddress+"\n\n\n\nThank you!");
+return true;
+}
+else
+{
+alert("\nYou have chosen to abort the submission.");
+return false;
+}
+else
+return false;
+}
+function isName() {
+var str = document.getElementById("name").value;
+if (str == "") {
+alert("\nThe NAME field is blank.\n\nPlease enter your name.")
+document.getElementById("name").focus();
+return false;
+}
+for (var i = 0; i < str.length; i++)
+{
+var ch = str.substring(i, i + 1);
+if (((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch)) && ch != ' ')
+{
+alert("\nThe NAME field only accepts letters & spaces.\n\nPlease re-enter your name.");
+document.getElementById("name").select();
+document.getElementById("name").focus();
+return false;
+   }
+}
+return true;
+}
+function isEmail()
+{
+emailAddress=document.getElementById("email").value;
+if (document.getElementById("email").value == "") {
+alert("\nThe E-MAIL field is blank.\n\nPlease enter your e-mail address.")
+document.getElementById("email").focus();
+return false;
+}
+if (document.getElementById("email").value.indexOf ('@',0) == -1 ||
+document.getElementById("email").value.indexOf ('.',0) == -1)
+{
+alert("\nThe E-MAIL field requires a \"@\" and a \".\"be used.\n\nPlease re-enter your e-mail address.")
+document.getElementById("email").select();
+document.getElementById("email").focus();
+return false;
+}
+else
+{
+toName();
+return true;
+}
+}
+function isBrowser()
+{
+if (document.getElementById("brows").value != navigator.appName + " " + navigator.appVersion)
+{
+if (confirm("\nYou've changed your browser type.\n\nClick on OK to keep changes.\n\nClick on Cancel to restore detected browser."))
+return true
+else
+{
+document.getElementById("brows").value = navigator.appName + " " + navigator.appVersion;
+return true;
+   }
+}
+else
+return true;
+}
+function isCountry() {
+var str = document.getElementById("country").value;
+if (str == "") {
+alert("\nThe COUNTRY field is blank.\n\nPlease enter your country.")
+document.getElementById("country").focus();
+return false;
+}
+for (var i = 0; i < str.length; i++) {
+var ch = str.substring(i, i + 1);
+if (((ch < "a" || "z" < ch) && (ch < "A" || "Z" < ch)) && ch != ' ')
+{
+alert("\nThe COUNTRY field only accepts letters & spaces.\n\nPlease re-enter your country.");
+document.getElementById("country").select();
+document.getElementById("country").focus();
+return false;
+   }
+}
+return true;
+}
+function isComment() {
+if (document.getElementById("comments").value == "") {
+if (confirm("\nYou're about to submit without leaving a comment.\n\nClick on CANCEL to include a comment.\n\nClick on OK to continue without a comment."))
+return true
+else
+{
+document.getElementById("comments").focus();
+return false;
+}
+}
+else
+return true
+}
+function isFavorite() {
+if (document.getElementById("favorites").value == "") {
+if (confirm("\nYou're about to submit without listing your favorite sites.\n\nClick on CANCEL to include favorites.\n\nClick on OK to continue without listing favorites."))
+return true
+else
+{
+document.getElementById("favorites").focus();
+return false;
+   }
+}
+else
+return true
+}
+// End -->
+</SCRIPT>
+	
 	</head>
 
 <body style="background-color:silver">	
@@ -21,7 +159,61 @@
 	<a href="guestbook.html">Guest Book</a>
 	</div>
 
-<font face = "Gadugi" size = "5"> Welcome to Valtteri Lamberg's Website. <br> I'm a second year programmer/game designer student here in Kajaani University of Applied Sciences. <br> This website's goal is to introduce me, my interests and what I can do!</font> <br>
+
+<BODY onLoad="Reset()">
+
+<FORM ENCTYPE="text/plain" NAME="mail" METHOD='GET' onSubmit="return submitForms()">
+    <TABLE BORDER=0 WIDTH=100%>
+      <TR>
+        <TD align="center"> <FONT COLOR=800000><STRONG>Enter your name:</STRONG></FONT></TD>
+        <TD align="center"> <FONT COLOR=800000><STRONG>Enter your e-mail address:</STRONG></FONT></TD>
+      </TR>
+      <TR>
+        <TD align="center">
+          <INPUT TYPE="text" id="name" NAME="name"   SIZE=30 MAXLENGTH=40 >
+        </TD>
+        <td colspan="2" align="center">
+          <INPUT TYPE="text" id="email" NAME="email"   SIZE=30 MAXLENGTH=40 >
+      </TR>
+      <TR>
+        <TD align="center"> <FONT COLOR=800000><STRONG>Your browser </STRONG></FONT></TD>
+        <TD align="center"> <FONT COLOR=800000><STRONG>Enter your country:</STRONG></FONT></TD>
+      </TR>
+      <TR>
+        <TD align="center">
+          <INPUT TYPE="text" id="brows" NAME="browser" SIZE=30 MAXLENGTH=60>
+        </TD>
+        <TD align="center">
+          <INPUT TYPE="text" id="country" NAME="country" SIZE=30 MAXLENGTH=60>
+        </TD>
+      </TR>
+      <TR>
+        <TD align="center" colspan="2"> <font color=800000><strong>Leave a comment
+          or suggestion:</strong></font></TD>
+      </TR>
+      <TR>
+        <TD align="center" colspan="2">
+          <textarea id="comments" name="comments" rows=5 cols=50 wrap=yes>Comments?  Suggestions?</textarea>
+        </TD>
+      </TR>
+      <TR>
+        <TD align="center" colspan="2"><font color=800000><strong>List your favorite
+          sites:</strong></font></TD>
+      </TR>
+      <TR>
+        <TD align="center" colspan="2">
+          <textarea id="favorites" name="favorites" rows=5 cols=50 wrap=yes>
+Any sites I should take a look at?</textarea>
+        </TD>
+      </TR>
+      <TR>
+        <TD align="center" colspan="2">
+          <input type="submit" value="Submit" name="submit">
+          <input type="reset" value="Reset" onClick="Reset()" name="reset">
+        </TD>
+      </TR>
+    </TABLE>
+  </form>
 
 </body>
 
