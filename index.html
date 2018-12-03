@@ -34,54 +34,40 @@
 
 <br>
 
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<script>
-var x = document.getElementByIs("demo");
-
-function getLocation() {
-if (navigator.geolocation) {
-navigator.geolocation.getCurrentPosition(showPosition);
-}
-else {
-x.innerHTML = "Geolocation not supported by your browser.";
-}
-}
-
-function showPosition(position) {
-x.innerHTML = "Latitude: " + position.coords.latitude +
-"<br>Longtitude: " + position.coords.longtitude;
-}
-
-</script>
-
 <head>
+<meta charset="utf-8">
+<title>Finding Me</title>
 <script>
-function allowDrop(ev) {
-    ev.preventDefault();
+function getLocation()
+{
+  // Check whether browser supports Geolocation API or not
+  if (navigator.geolocation) { // Supported
+  
+    // To add PositionOptions
+	
+	navigator.geolocation.getCurrentPosition(getPosition);
+  } else { // Not supported
+	alert("Oops! This browser does not support HTML Geolocation.");
+  }
+}
+function getPosition(position)
+{
+  document.getElementById("location").innerHTML = 
+	  "Latitude: " + position.coords.latitude + "<br>" +
+	  "Longitude: " + position.coords.longitude;
 }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
+// To add catchError(positionError) function
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
 </script>
 </head>
 <body>
+<h1>Finding Me</h1>
+<button onclick="getLocation()">Where am I?</button>
+<p id="location"></p>
 
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-<img id="drag1" src="images/piano_01.jpg" draggable="true"
-ondragstart="drag(event)" width="336" height="69">
+
 
 </body>
 
