@@ -32,6 +32,33 @@
 	
 <font face = "Gadugi" size = "5"> Welcome to Valtteri Lamberg's Website. <br> I'm a second year programmer/game designer student here in Kajaani University of Applied Sciences. <br> This website's goal is to introduce me, my interests and what I can do!</font> <br>
 
+<br>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementByIs("demo");
+
+function getLocation() {
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition);
+}
+else {
+x.innerHTML = "Geolocation not supported by your browser.";
+}
+}
+
+function showPosition(position) {
+x.innerHTML = "Latitude: " + position.coords.latitude +
+"<br>Longtitude: " + position.coords.longtitude;
+}
+
+</script>
+
 </body>
 
 
